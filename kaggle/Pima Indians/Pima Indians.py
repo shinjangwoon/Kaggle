@@ -110,18 +110,35 @@ graphviz.Source(dot_tree)
 
 
 # %%
-
-
-
-# %%
-
+model.feature_importances_
 
 
 # %%
-
+sns.barplot(x=model.feature_importances_, y=feature_names)
 
 
 # %%
+diff_count = abs(y_test-y_predict).sum()
+diff_count
 
+
+# %%
+# 전체에서 29%를 틀렸음을 알 수 있음
+abs(y_test-y_predict).sum() / len(y_test) * 100
+
+
+# %%
+# 예측도
+(len(y_test)-diff_count) / len(y_test) * 100
+
+
+# %%
+from sklearn.metrics import accuracy_score
+
+accuracy_score(y_test, y_predict)
+
+
+# %%
+model.score(X_test, y_test) * 100
 
 
