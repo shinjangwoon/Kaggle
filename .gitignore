@@ -1,2 +1,6 @@
 # API_KEYS
 .env
+# 용량이 큰 데이터
+kaggle/New York City Taxi Fare Prediction/new-york-city-taxi-fare-prediction/train.csv
+kaggle/New York City Taxi Fare Prediction/new-york-city-taxi-fare-prediction/test.csv
+kaggle/New York City Taxi Fare Prediction/new-york-city-taxi-fare-prediction/sample_submission.csv
