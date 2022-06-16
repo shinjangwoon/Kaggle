@@ -1,4 +1,3 @@
-import pandas as pd
 from sklearn.model_selection import cross_val_score, train_test_split
 from sklearn.preprocessing import StandardScaler, MinMaxScaler, RobustScaler, Normalizer
 from sklearn.linear_model import LinearRegression
@@ -84,7 +83,7 @@ class RegressionModels:
         lgb_test = lgb.Dataset(X_test[self.feature_list], label=y_test)
         model_lgbm = lgb.train(kwargs, lgb_train, num_boost_round,
                                lgb_test, verbose_eval=100, early_stopping_rounds=100)
-        pred_lgbm = model_lgbm.predict(X_test)
+        pred_lgbm = model_lgbm.predict(X_test[self.feature_list])
         mae = mean_absolute_error(pred_lgbm, y_test)
         mse = mean_squared_error(pred_lgbm, y_test)
         r2 = r2_score(pred_lgbm, y_test)
